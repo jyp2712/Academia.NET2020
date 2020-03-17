@@ -1,0 +1,122 @@
+class Program
+    {
+        static void MostrarMenu()
+        {
+            Console.WriteLine("************************************************");
+            Console.WriteLine("*                                              *");
+            Console.WriteLine("*            Ingrese una opcion                *");
+            Console.WriteLine("*                                              *");
+            Console.WriteLine("*           1- Superficie de un Cuadrado       *");
+            Console.WriteLine("*           2- Superficie de un Rectángulo     *");
+            Console.WriteLine("*           3- Superficie de un Triángulo      *");
+            Console.WriteLine("*           4- Salir del programa              *");
+            Console.WriteLine("*                                              *");
+            Console.WriteLine("************************************************");
+
+        }
+
+       static void Cuadrado()
+        {
+            Console.Clear();
+            Console.WriteLine("Ingrese la medida de las aristas: ");
+            int a1 = Int32.Parse(Console.ReadLine());
+
+
+            double superficie = Math.Pow(a1, 2);
+
+            Console.WriteLine($"La superficie del Cuadrado es: {superficie}");
+            Console.ReadLine();
+
+
+        }
+
+        static void Rectangulo()
+        {
+            Console.Clear();
+            Console.WriteLine("Ingrese la medida de la base: ");
+            int b1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la medida de la altura: ");
+            int a1 = Int32.Parse(Console.ReadLine());
+
+            double superficieRectangulo = b1 * a1;
+
+            Console.WriteLine($"La superficie del Rectangulo es: {superficieRectangulo}");
+
+
+            Console.ReadLine();
+        }
+
+        static void Triangulo()
+        {
+            Console.Clear();
+
+            Console.Clear();
+            Console.WriteLine("Ingrese la medida de la base: ");
+            int b1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la medida de la altura: ");
+            int a1 = Int32.Parse(Console.ReadLine());
+
+            double superficie = b1 * a1;
+
+            Console.WriteLine($"La superficie del Triangulo es: {superficie}");
+
+            Console.ReadLine();
+
+        }
+
+        static void Main(string[] args)
+        {
+            bool salir = false;
+            while (salir == false)
+            {
+                try
+                {
+                int opcion;
+                Console.Clear();
+                MostrarMenu();
+                Console.WriteLine("            Opcion: ");
+                opcion = Int32.Parse(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        {
+
+                            Cuadrado();
+                        }break;
+
+                    case 2:
+                        {
+
+                              Rectangulo();
+                        }
+                        break;
+                    case 3:
+                        {
+
+                              Triangulo();
+                        }
+                        break;
+
+                    case 4:
+                        {
+                            salir = true;
+                        }break;
+                    default:
+                        {
+                            Console.WriteLine("Opcion incorrecta!");
+                            Console.ReadLine(); //Pause
+
+                        }
+                        break;
+                }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+
+            }
+
+        }
+    }
